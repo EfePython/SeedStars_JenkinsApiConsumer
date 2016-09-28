@@ -8,7 +8,6 @@ Created on Wed Sep 28 07:50:25 2016
 import os
 import sys
 
-from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 

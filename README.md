@@ -45,6 +45,13 @@ env\Scripts\pip install -r requirements.txt
   Source: http://www.sqlalchemy.org/
 
 
+### How to run
+```terminal
+virtual env
+env\Scripts\pip install -r requirements.txt
+env\Scripts\python Challenge1.py
+```
+
 ### References
 - https://pypi.python.org/pypi/jenkinsapi
 - https://fatalfailure.wordpress.com/2012/06/26/the-python-jenkins-api/
