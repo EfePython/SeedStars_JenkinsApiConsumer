@@ -15,7 +15,7 @@
 
 - Create virtual environment
 ```terminal
-virtual env
+virtualenv env
 ```
 
 - Add "env" directory to .gitignore file
@@ -49,6 +49,7 @@ env\Scripts\pip install -r requirements.txt
 ```terminal
 virtual env
 env\Scripts\pip install -r requirements.txt
+
 env\Scripts\python Challenge1.py
 ```
 

@@ -15,10 +15,12 @@ from jenkinsapi.jenkins import Jenkins
 from models import JenkinsJobsStatus
 
 
-jenkins = Jenkins('https://jenkins.qa.ubuntu.com/api/python/')
+jenkins_instance = Jenkins('https://jenkins.qa.ubuntu.com/api/python/')
+MAX_JENKINS_JOBS = 10
 
 dbpath = 'sqlite:///jenkins_jobs_statuses.db'
 Session = sessionmaker()
+
 
 def initialize_table():
     engine = create_engine(dbpath)
@@ -31,12 +33,13 @@ def initialize_table():
         print(JenkinsJobsStatus.JobStatus.__tablename__ + " table does NOT EXIST.\n")
 
 def get_jobs_names ():
-    jobs_names_list = jenkins.keys()
+    jobs_names_list = jenkins_instance.keys()
 
-    if len(jobs_names_list) > 10:
-        jobs_names_list = jobs_names_list[0:10]
+    if len(jobs_names_list) > MAX_JENKINS_JOBS:
+        jobs_names_list = jobs_names_list[0:MAX_JENKINS_JOBS]
 
     return jobs_names_list
+
 
 def start():
     initialize_table()
@@ -46,7 +49,7 @@ def start():
         session = Session()
 
         for job_name in jobs_names_list:
-            jenkins_job = jenkins.get_job(job_name)
+            jenkins_job = jenkins_instance.get_job(job_name)
             job_last_build = jenkins_job.get_last_build()
 
             print("Job name: " + job_name + ", Build number: " + str(job_last_build.buildno) \
