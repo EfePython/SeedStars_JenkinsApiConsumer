@@ -2,9 +2,9 @@
 
 
 ### Project specifications
-Operating System platform: Windows
-Python version: 3.5.2
-Pip version: 8.1.1
+- Operating System platform: Windows
+- Python version: 3.5.2
+- Pip version: 8.1.1
 
 
 ### Project setup steps:
@@ -43,3 +43,9 @@ env\Scripts\pip install -r requirements.txt
 
 - SQLAlchemy
   Source: http://www.sqlalchemy.org/
+
+
+### References
+- https://pypi.python.org/pypi/jenkinsapi
+- https://fatalfailure.wordpress.com/2012/06/26/the-python-jenkins-api/
+- http://docs.sqlalchemy.org/en/latest/orm/tutorial.html
