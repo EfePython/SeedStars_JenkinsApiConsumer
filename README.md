@@ -7,7 +7,7 @@
 - Pip version: 8.1.1
 
 
-### Project setup steps:
+### Steps I used for writing this app
 ----------
 - Create project directory
 
